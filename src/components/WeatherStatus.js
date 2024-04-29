@@ -5,17 +5,25 @@ import { FormattedMessage } from 'react-intl';
 
 const URL = `https://api.openweathermap.org/data/2.5/weather?q=nairobi&units=metric&appid=${process.env.REACT_APP_OPEN_WEATHER_APIKEY}`
 
-
 export default function WeatherStatus () {
     const [data, setData] = useState(null);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState(null);
 
     useEffect(() => {
+        setIsLoading(true);
         axios.get(URL).then((response) => {
-          setData(response.data);
-        });
+            setData(response.data);
+            })
+            .catch(error => {
+                setError(error);
+            })
+            .finally(() => setIsLoading(false));
       }, []);
 
-    if (!data) return null;
+    if (error) return (<h1 className='error-code'>Error {error.response?.status}</h1>)
+
+    if (isLoading) return "Loading..."; else if (!data) return null;
 
     const icon = data.weather && data.weather[0] && data.weather[0].icon
     const weather_condition = data.weather && data.weather[0] && data.weather[0].main

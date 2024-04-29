@@ -27,3 +27,8 @@
     font-weight: 100;
     font-size: 5vmax;
 }
+
+.error-code {
+    font-weight: 200;
+    text-align: center;
+}
