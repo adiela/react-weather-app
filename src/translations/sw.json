@@ -1,3 +1,18 @@
 {
-    "app.title": "Hali ya hewa"
+    "app.title": "Hali ya hewa",
+    "condition.thunderstorm": "Dhoruba ya radi",
+    "condition.drizzle": "Manyunyu",
+    "condition.rain": "Mvua",
+    "condition.snow": "Theluji",
+    "condition.mist": "Ukungu",
+    "condition.smoke": "Moshi",
+    "condition.haze": "Ukungu",
+    "condition.dust": "Vumbi",
+    "condition.fog": "Ukungu",
+    "condition.sand": "Mchanga",
+    "condition.ash": "Majivu",
+    "condition.squall": "Upepo",
+    "condition.tornado": "Kimbunga",
+    "condition.clear": "Anga Safi",
+    "condition.clouds": "Mawingu"
 }

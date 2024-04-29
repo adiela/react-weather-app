@@ -1,3 +1,18 @@
 {
-    "app.title": "Weather"
+    "app.title": "Weather",
+    "condition.thunderstorm": "Thunderstorm",
+    "condition.drizzle": "Drizzle",
+    "condition.rain": "Rain",
+    "condition.snow": "Snow",
+    "condition.mist": "Mist",
+    "condition.smoke": "Smoke",
+    "condition.haze": "Haze",
+    "condition.dust": "Dust",
+    "condition.fog": "Fog",
+    "condition.sand": "Sand",
+    "condition.ash": "Ash",
+    "condition.squall": "Squall",
+    "condition.tornado": "Tornado",
+    "condition.clear": "Clear",
+    "condition.clouds": "Clouds"
 }
