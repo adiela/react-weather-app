@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useState } from 'react';
 
 import { IntlProvider, FormattedMessage } from 'react-intl';
 import messages_en from './translations/en.json';

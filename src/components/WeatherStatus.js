@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './WeatherStatus.css'
 import { FormattedMessage } from 'react-intl';
@@ -7,9 +7,9 @@ const URL = `https://api.openweathermap.org/data/2.5/weather?q=nairobi&units=met
 
 
 export default function WeatherStatus () {
-    const [data, setData] = React.useState(null);
+    const [data, setData] = useState(null);
 
-    React.useEffect(() => {
+    useEffect(() => {
         axios.get(URL).then((response) => {
           setData(response.data);
         });

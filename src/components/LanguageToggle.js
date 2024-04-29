@@ -1,10 +1,9 @@
-import React, { useState, useContext } from 'react';
+import React, { useContext } from 'react';
 import './LanguageToggle.css';
 import { LocaleContext } from '../App';
 
 export default function LanguageToggle() {
     const { setLocale } = useContext(LocaleContext);
-    // const [language, setLanguage] = useState('');
 
     const handleLanguageChange = (event) => {
       setLocale(event.target.value);
