@@ -20,10 +20,12 @@ function App() {
   return (
     <IntlProvider messages={messages[locale]}  locale={locale}>
       <div id="App">
-        <LanguageToggle/>
-        <h1 id='app-name'>
-          <FormattedMessage id="app.title"/>
-        </h1>
+        <header id='weather-header'>
+          <h1 id='app-name'>
+            <FormattedMessage id="app.title"/>
+          </h1>
+          <LanguageToggle/>
+        </header>
         <WeatherStatus/>
       </div>
     </IntlProvider>

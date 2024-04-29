@@ -6,13 +6,14 @@ body{
   min-height: 100vh;
   min-width: 100vw;
 }
-#App{
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: space-between;
-}
 #app-name {
   text-align: center;
+}
+#weather-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  margin: 0;
 }
