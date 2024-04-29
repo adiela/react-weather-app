@@ -1,9 +1,11 @@
 import './App.css';
+import LanguageToggle from "./components/LanguageToggle"
 
 function App() {
   return (
-    <div className="App">
-      <p>Weather</p>
+    <div id="App">
+      <LanguageToggle/>
+      <h1 id='app-name'>Weather</h1>
     </div>
   );
 }
