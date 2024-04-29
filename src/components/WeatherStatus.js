@@ -16,14 +16,17 @@ export default function WeatherStatus () {
       }, []);
 
     if (!data) return null;
+
+    const icon = data.weather && data.weather[0] && data.weather[0].icon
+    const weather_condition = data.weather && data.weather[0] && data.weather[0].main
+    const temp = data.main?.temp
     
     return (
         <div className='weather-status'>
-            <h2 className='city-name'>{data.name}</h2>
-            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather Condition" width={60} height={60} />
-            <p className='temperature'>{Math.trunc(data.main.temp)}<sup>°</sup>C</p>
-            <p className='weather-condition'><FormattedMessage id={`condition.${data.weather[0].main}`.toLowerCase()}/></p>
-
+            <h2 className='city-name'>Nairobi</h2>
+            { icon ? <img src={`https://openweathermap.org/img/wn/${icon}@2x.png`} alt="Weather Condition" width={60} height={60} /> : null}
+            { temp ? <p className='temperature'>{Math.trunc(temp)}<sup>°</sup>C</p> : null }
+            { weather_condition ? <p className='weather-condition'><FormattedMessage id={`condition.${weather_condition}`.toLowerCase()}/></p> : null}
         </div>
     )
 }
