@@ -3,7 +3,8 @@ import { IntlProvider, FormattedMessage } from 'react-intl';
 import messages_en from './translations/en.json';
 import messages_sw from './translations/sw.json';
 import './App.css';
-import LanguageToggle from "./components/LanguageToggle"
+import LanguageToggle from "./components/LanguageToggle";
+import WeatherStatus from './components/WeatherStatus';
 
 const messages = {
   en: messages_en,
@@ -23,6 +24,7 @@ function App() {
         <h1 id='app-name'>
           <FormattedMessage id="app.title"/>
         </h1>
+        <WeatherStatus/>
       </div>
     </IntlProvider>
   );

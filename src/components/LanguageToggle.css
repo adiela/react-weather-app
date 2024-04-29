@@ -1,6 +1,6 @@
 /* container for all of the toggle elements */
 .toggle-container {
-    float: right;
+    align-self: flex-end;
     font-size: 14px;
     text-align:center;
     width: 10rem;

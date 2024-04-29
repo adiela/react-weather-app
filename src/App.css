@@ -8,6 +8,10 @@ body{
 }
 #App{
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
 }
 #app-name {
   text-align: center;
