@@ -1,11 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import './LanguageToggle.css';
+import { LocaleContext } from '../App';
 
 export default function LanguageToggle() {
-    const [selectedLanguage, setSelectedLanguage] = useState('');
+    const { setLocale } = useContext(LocaleContext);
+    // const [language, setLanguage] = useState('');
 
     const handleLanguageChange = (event) => {
-      setSelectedLanguage(event.target.value);
+      setLocale(event.target.value);
     };
 
     return (
@@ -14,7 +16,7 @@ export default function LanguageToggle() {
                 type="radio"
                 id="switchEnglish"
                 name="toggleLanguage"
-                value="English"
+                value="en"
                 defaultChecked={true} 
                 onChange={handleLanguageChange}
             />
@@ -23,7 +25,7 @@ export default function LanguageToggle() {
             type="radio"
             id="switchSwahili"
             name="toggleLanguage"
-            value="Swahili"
+            value="sw"
             onChange={handleLanguageChange}
             />
             <label htmlFor="switchSwahili">Swahili</label>

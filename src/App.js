@@ -1,10 +1,14 @@
-import React, { useState } from 'react';
+import React, { createContext, useContext, useState } from 'react';
+
 import { IntlProvider, FormattedMessage } from 'react-intl';
 import messages_en from './translations/en.json';
 import messages_sw from './translations/sw.json';
 import './App.css';
 import LanguageToggle from "./components/LanguageToggle";
 import WeatherStatus from './components/WeatherStatus';
+
+export const LocaleContext = createContext(null);
+
 
 const messages = {
   en: messages_en,
@@ -14,11 +18,12 @@ const messages = {
 function App() {
   const [locale, setLocale] = useState('en'); //Default locale is English
 
-  const changeLanguage = (selectedLocale) => {
-    setLocale(selectedLocale)
-  };
   return (
-    <IntlProvider messages={messages[locale]}  locale={locale}>
+    <LocaleContext.Provider value={{
+      locale,
+      setLocale
+    }}>
+       <IntlProvider messages={messages[locale]}  locale={locale} defaultLocale='en'>
       <div id="App">
         <header id='weather-header'>
           <h1 id='app-name'>
@@ -29,6 +34,8 @@ function App() {
         <WeatherStatus/>
       </div>
     </IntlProvider>
+    </LocaleContext.Provider>
+   
   );
 }
 
