@@ -7,22 +7,23 @@ const URL = `https://api.openweathermap.org/data/2.5/weather?q=nairobi&units=met
 
 export default function WeatherStatus () {
     console.log('this is the env', process.env)
-    const [city, setCity] = React.useState(null);
+    const [data, setData] = React.useState(null);
 
     React.useEffect(() => {
         axios.get(URL).then((response) => {
-          setCity(response.data);
+          setData(response.data);
         });
       }, []);
 
-    if (!city) return null;
+    if (!data) return null;
     
     return (
         <div className='weather-status'>
-            <h2 className='city-name'>{city.name}</h2>
-            <p className='temperature'>{Math.trunc(city.main.temp)}<sup>°</sup>C</p>
-            <p className='weather-condition'>{city.weather[0].main}</p>
-            <p>Humidity: {city.main.humidity}</p>
+            <h2 className='city-name'>{data.name}</h2>
+            <img src="https://openweathermap.org/img/wn/10d@2x.png" alt="Weather Condition" width={60} height={60} />
+            <p className='temperature'>{Math.trunc(data.main.temp)}<sup>°</sup>C</p>
+            <p className='weather-condition'>{data.weather[0].main}</p>
+            <p>Humidity: {data.main.humidity}</p>
         </div>
     )
 }

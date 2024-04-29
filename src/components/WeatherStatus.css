@@ -3,27 +3,27 @@
     flex-direction: column;
     flex-wrap: nowrap;
     justify-content: space-between;
+    align-items: center;
     text-align: center;
     flex: 2;
+}
+
+.weather-status * {
+    margin: 0;
+    padding: 0;
 }
 
 .city-name {
     font-weight: 100;
     font-size: 5vmax;
-    margin: 0;
-    padding: 0;
 }
 
 .temperature {
     font-size: 30vmin;
     line-height: 1;
-    margin: 0;
-    padding: 0;
 }
 
 .weather-condition {
     font-weight: 100;
     font-size: 5vmax;
-    margin: 0;
-    padding: 0;
 }
